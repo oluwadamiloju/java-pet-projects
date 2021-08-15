@@ -1,11 +1,10 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class MusicPlayerTests {
-    MusicPlayer mp3;
+    private MusicPlayer mp3;
 
     @BeforeEach
     void setUp() {
@@ -24,6 +23,7 @@ public class MusicPlayerTests {
 
     @Test
     void testThatMusicPlayerCanDownloadMusicWhenOn() {
-
+        assertTrue(mp3.turnOn());
+        assertEquals(mp3.numberOfSongs + 1, mp3.downloadMusic());
     }
 }
