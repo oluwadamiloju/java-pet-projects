@@ -6,9 +6,21 @@ public class MusicPlayer {
         return !isOn;
     }
 
+    public boolean turnOff() { return isOn; }
+
+    public void powerSwitch() {
+        if(isOn) {
+            turnOn();
+        } else {
+            turnOff();
+        }
+    }
+
     public int downloadMusic() {
         if (turnOn()) {
             numberOfSongs += 1;
+        } else {
+            return numberOfSongs;
         }
         return numberOfSongs;
     }
