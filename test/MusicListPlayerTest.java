@@ -5,10 +5,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class MusicPlayerTest {
     private MusicPlayer mp3;
+    private Music songs;
 
     @BeforeEach
     void setUp() {
         mp3 = new MusicPlayer();
+        songs = new Music();
     }
 
     @Test
@@ -29,15 +31,22 @@ public class MusicPlayerTest {
         assertFalse(mp3.isOn);
     }
 
-    @Test
-    void testThatMusicPlayerCanDownloadMusicWhenOn() {
-        assertTrue(mp3.turnOn());
-        assertEquals(mp3.numberOfSongs + 1, mp3.downloadMusic());
-    }
+//    @Test
+//    void testThatMusicPlayerCanDownloadMusicWhenOn() {
+//        assertTrue(mp3.turnOn());
+//        assertEquals(mp3.numberOfSongs + 1, mp3.downloadMusic());
+//    }
+//
+//    @Test
+//    void testThatMusicPlayerCannotDownloadMusicWhenOff() {
+//        assertFalse(mp3.isOn);
+//        assertEquals(mp3.numberOfSongs, mp3.downloadMusic());
+//    }
 
     @Test
-    void testThatMusicPlayerCannotDownloadMusicWhenOff() {
-        assertFalse(mp3.isOn);
-        assertEquals(mp3.numberOfSongs, mp3.downloadMusic());
+    void increaseVolumeOfMusicPlayer() {
+        assertTrue(mp3.turnOn());
+
     }
+
 }
