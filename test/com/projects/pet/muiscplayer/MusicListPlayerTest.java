@@ -3,32 +3,38 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class MusicPlayerTest {
+public class MusicListPlayerTest {
     private MusicPlayer mp3;
-    private Music songs;
+    private MusicList songs;
 
     @BeforeEach
     void setUp() {
         mp3 = new MusicPlayer();
-        songs = new Music();
+        songs = new MusicList();
     }
 
     @Test
     void testThatMusicPlayerIsOffByDefault() {
-        assertFalse(mp3.isOn);
+        assertFalse(mp3.isOn());
     }
 
-    @Test
-    void testThatMusicPlayerCanBeTurnedOn() {
-        assertTrue(!(mp3.isOn));
-    }
+//    @Test
+//    void testThatMusicPlayerCanBeTurnedOn() {
+//        assertFalse(mp3.isOn());
+//
+//        mp3.turnOn();
+//        mp3.turnOff();
+//        mp3.turnOn();
+////        assertFalse(mp3.isOn());
+//
+//        assertTrue(mp3.isOn());
+//    }
 
     @Test
     void testThatPowerSwitchWorks() {
+        assertFalse(mp3.isOn());
         mp3.powerSwitch();
-        assertTrue(!(mp3.isOn));
-        mp3.powerSwitch();
-        assertFalse(mp3.isOn);
+        assertTrue(mp3.isOn());
     }
 
 //    @Test
@@ -45,8 +51,9 @@ public class MusicPlayerTest {
 
     @Test
     void increaseVolumeOfMusicPlayer() {
-        assertTrue(mp3.turnOn());
-
+//        assertTrue(mp3.turnOn());
+        mp3.increaseVolume();
+//        assertEquals();
     }
 
 }
