@@ -1,3 +1,7 @@
+package com.projects.pet.musicplayer;
+
+import com.projects.pet.musicplayer.MusicList;
+
 public class MusicPlayer {
     private boolean isOn;
     int numberOfSongs;

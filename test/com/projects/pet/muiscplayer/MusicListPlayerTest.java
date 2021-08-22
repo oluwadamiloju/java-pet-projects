@@ -1,3 +1,7 @@
+package com.projects.pet.muiscplayer;
+
+import com.projects.pet.musicplayer.MusicList;
+import com.projects.pet.musicplayer.MusicPlayer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

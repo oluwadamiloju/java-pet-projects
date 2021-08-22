@@ -1,3 +1,7 @@
+package com.projects.pet.musicplayer;
+
+import com.projects.pet.musicplayer.Music;
+
 import java.util.ArrayList;
 
 public class MusicList {
