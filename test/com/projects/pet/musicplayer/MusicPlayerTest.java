@@ -1,13 +1,11 @@
-package com.projects.pet.muiscplayer;
+package com.projects.pet.musicplayer;
 
-import com.projects.pet.musicplayer.MusicList;
-import com.projects.pet.musicplayer.MusicPlayer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class MusicListPlayerTest {
+public class MusicPlayerTest {
     private MusicPlayer mp3;
     private MusicList songs;
 
