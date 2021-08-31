@@ -34,8 +34,10 @@ public class AirConditionerTest {
         assertFalse(ac.isOn());
         ac.turnOn();
         assertTrue(ac.isOn());
-        ac.increaseTemperature(20);
-        assertEquals(20 + 1, ac.getHigherTemperature());
+        assertEquals(16, ac.getTemperature());
+        ac.increaseTemperature();
+        ac.increaseTemperature();
+        assertEquals(16 + 2, ac.getTemperature());
     }
 
     @Test
@@ -43,8 +45,10 @@ public class AirConditionerTest {
         assertFalse(ac.isOn());
         ac.turnOn();
         assertTrue(ac.isOn());
-        ac.reduceTemperature(20);
-        assertEquals(20 - 1, ac.getLowerTemperature());
+        ac.increaseTemperature();
+        ac.increaseTemperature();
+        ac.reduceTemperature();
+        assertEquals(17, ac.getTemperature());
     }
 
     @Test
@@ -52,8 +56,12 @@ public class AirConditionerTest {
         assertFalse(ac.isOn());
         ac.turnOn();
         assertTrue(ac.isOn());
-        ac.increaseTemperature(30);
-        assertEquals(30, ac.getHigherTemperature());
+        for(int i = 0; i < 15; i ++){
+            ac.increaseTemperature();
+        }
+        assertEquals(30, ac.getTemperature());
+        ac.increaseTemperature();
+        assertEquals(30, ac.getTemperature());
     }
 
     @Test
@@ -61,7 +69,7 @@ public class AirConditionerTest {
         assertFalse(ac.isOn());
         ac.turnOn();
         assertTrue(ac.isOn());
-        ac.reduceTemperature(16);
-        assertEquals(16, ac.getLowerTemperature());
+        ac.reduceTemperature();
+        assertEquals(16, ac.getTemperature());
     }
 }
