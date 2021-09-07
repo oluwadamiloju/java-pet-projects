@@ -1,7 +1,6 @@
 package com.projects.pet.airconditioner;
 
 public class AirConditioner {
-
     private boolean isOn;
     private int temperature;
 
