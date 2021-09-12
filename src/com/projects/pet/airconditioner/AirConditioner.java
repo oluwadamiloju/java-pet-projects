@@ -30,13 +30,13 @@ public class AirConditioner {
 
     public void increaseTemperature() {
         if(isOn) {
-            if(temperature<30) temperature++;
+            if(temperature < 30) { temperature++; }
         }
     }
 
     public void reduceTemperature() {
         if(isOn) {
-            if(temperature>16) temperature--;
+            if(temperature > 16) { temperature--; }
         }
     }
 }

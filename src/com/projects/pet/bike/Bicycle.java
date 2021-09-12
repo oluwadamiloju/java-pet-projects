@@ -3,7 +3,7 @@ package com.projects.pet.bike;
 public class Bicycle {
     private boolean isOn;
     private int speed;
-    private enum Gear {GEAR_ONE, GEAR_TWO, GEAR_THREE, GEAR_FOUR}
+    public enum Gear {GEAR_ONE, GEAR_TWO, GEAR_THREE, GEAR_FOUR}
 
     public Bicycle() {}
 
@@ -18,7 +18,7 @@ public class Bicycle {
 
     public void turnOn() {
         this.isOn = true;
-        this.speed = 0;
+//        this.speed = 0;
     }
 
     public void turnOff() {
@@ -33,20 +33,41 @@ public class Bicycle {
         this.speed = speed;
     }
 
-    public int accelerate() {
+    public Gear getGear() {
         Gear gear = Gear.GEAR_ONE;
-        if(speed > 0 && speed <= 20) {
+        if(speed >= 0 && speed <= 20) {
             gear = Gear.GEAR_ONE;
-        }
-        if(speed >= 21 && speed <= 30) {
+        } else if(speed > 20 && speed <= 30) {
             gear = Gear.GEAR_TWO;
-        }
-        if(speed >= 31 && speed <= 40) {
+        } else if(speed > 30 && speed <= 40) {
             gear = Gear.GEAR_THREE;
-        }
-        if(speed >= 41) {
+        } else if(speed >= 40) {
             gear = Gear.GEAR_FOUR;
         }
         return gear;
+    }
+
+    public void accelerate() {
+        if(speed >= 0 && speed <= 20) {
+            speed += 1;
+        } else if(speed > 20 && speed <= 30) {
+            speed += 2;
+        } else if (speed > 30 && speed <= 40) {
+            speed += 3;
+        } else if (speed > 40) {
+            speed += 4;
+        }
+    }
+
+    public void decelerate() {
+        if(speed >= 0 && speed <= 20) {
+            speed -= 1;
+        } else if(speed > 20 && speed <= 30) {
+            speed -= 2;
+        } else if (speed > 30 && speed <= 40) {
+            speed -= 3;
+        } else if (speed > 40) {
+            speed -= 4;
+        }
     }
 }
